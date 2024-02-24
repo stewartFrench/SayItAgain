@@ -11,6 +11,18 @@
 		71CE10902B718F8600A8784B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE108F2B718F8600A8784B /* ContentView.swift */; };
 		71CE10922B718F8800A8784B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71CE10912B718F8800A8784B /* Assets.xcassets */; };
 		71CE10952B718F8800A8784B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71CE10942B718F8800A8784B /* Preview Assets.xcassets */; };
+		71CE10A02B7190D700A8784B /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE109F2B7190D700A8784B /* MusicViewModel.swift */; };
+		71CE10A22B7190F200A8784B /* SLFLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE10A12B7190F200A8784B /* SLFLog.swift */; };
+		71CE10AC2B71911C00A8784B /* PlaylistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE10A32B71911B00A8784B /* PlaylistsView.swift */; };
+		71CE10AD2B71911C00A8784B /* AlbumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE10A42B71911B00A8784B /* AlbumsView.swift */; };
+		71CE10AE2B71911C00A8784B /* TracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE10A52B71911C00A8784B /* TracksView.swift */; };
+		71CE10AF2B71911C00A8784B /* NewestAlbumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE10A62B71911C00A8784B /* NewestAlbumsView.swift */; };
+		71CE10B12B71911C00A8784B /* ArtistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE10A82B71911C00A8784B /* ArtistsView.swift */; };
+		71CE10B22B71911C00A8784B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE10A92B71911C00A8784B /* LaunchScreenView.swift */; };
+		71CE10B42B71911C00A8784B /* AlbumsFromArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE10AB2B71911C00A8784B /* AlbumsFromArtistView.swift */; };
+		71E8D4BA2B72867D008E07F6 /* TranscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E8D4B92B72867D008E07F6 /* TranscribeView.swift */; };
+		71E8D4BD2B72906A008E07F6 /* plus_15_v1.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 71E8D4BB2B72906A008E07F6 /* plus_15_v1.imageset */; };
+		71E8D4BE2B72906A008E07F6 /* minus_15_v1.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 71E8D4BC2B72906A008E07F6 /* minus_15_v1.imageset */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +31,18 @@
 		71CE108F2B718F8600A8784B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		71CE10912B718F8800A8784B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71CE10942B718F8800A8784B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		71CE109F2B7190D700A8784B /* MusicViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
+		71CE10A12B7190F200A8784B /* SLFLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLFLog.swift; sourceTree = "<group>"; };
+		71CE10A32B71911B00A8784B /* PlaylistsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsView.swift; sourceTree = "<group>"; };
+		71CE10A42B71911B00A8784B /* AlbumsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsView.swift; sourceTree = "<group>"; };
+		71CE10A52B71911C00A8784B /* TracksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksView.swift; sourceTree = "<group>"; };
+		71CE10A62B71911C00A8784B /* NewestAlbumsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewestAlbumsView.swift; sourceTree = "<group>"; };
+		71CE10A82B71911C00A8784B /* ArtistsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsView.swift; sourceTree = "<group>"; };
+		71CE10A92B71911C00A8784B /* LaunchScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		71CE10AB2B71911C00A8784B /* AlbumsFromArtistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsFromArtistView.swift; sourceTree = "<group>"; };
+		71E8D4B92B72867D008E07F6 /* TranscribeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscribeView.swift; sourceTree = "<group>"; };
+		71E8D4BB2B72906A008E07F6 /* plus_15_v1.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = plus_15_v1.imageset; sourceTree = "<group>"; };
+		71E8D4BC2B72906A008E07F6 /* minus_15_v1.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = minus_15_v1.imageset; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +75,15 @@
 		71CE108C2B718F8600A8784B /* SayItAgain */ = {
 			isa = PBXGroup;
 			children = (
+				71CE109E2B71905F00A8784B /* Utilities */,
+				71CE109D2B71902E00A8784B /* ViewModels */,
+				71CE109C2B71902100A8784B /* Models */,
+				71CE109B2B718FF000A8784B /* Views */,
 				71CE108D2B718F8600A8784B /* SayItAgainApp.swift */,
 				71CE108F2B718F8600A8784B /* ContentView.swift */,
 				71CE10912B718F8800A8784B /* Assets.xcassets */,
+				71E8D4BC2B72906A008E07F6 /* minus_15_v1.imageset */,
+				71E8D4BB2B72906A008E07F6 /* plus_15_v1.imageset */,
 				71CE10932B718F8800A8784B /* Preview Content */,
 			);
 			path = SayItAgain;
@@ -65,6 +95,44 @@
 				71CE10942B718F8800A8784B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		71CE109B2B718FF000A8784B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				71CE10AB2B71911C00A8784B /* AlbumsFromArtistView.swift */,
+				71CE10A42B71911B00A8784B /* AlbumsView.swift */,
+				71CE10A82B71911C00A8784B /* ArtistsView.swift */,
+				71CE10A92B71911C00A8784B /* LaunchScreenView.swift */,
+				71CE10A62B71911C00A8784B /* NewestAlbumsView.swift */,
+				71CE10A32B71911B00A8784B /* PlaylistsView.swift */,
+				71CE10A52B71911C00A8784B /* TracksView.swift */,
+				71E8D4B92B72867D008E07F6 /* TranscribeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		71CE109C2B71902100A8784B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		71CE109D2B71902E00A8784B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				71CE109F2B7190D700A8784B /* MusicViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		71CE109E2B71905F00A8784B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				71CE10A12B7190F200A8784B /* SLFLog.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +193,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71E8D4BE2B72906A008E07F6 /* minus_15_v1.imageset in Resources */,
 				71CE10952B718F8800A8784B /* Preview Assets.xcassets in Resources */,
+				71E8D4BD2B72906A008E07F6 /* plus_15_v1.imageset in Resources */,
 				71CE10922B718F8800A8784B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +207,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71CE10AC2B71911C00A8784B /* PlaylistsView.swift in Sources */,
+				71CE10A02B7190D700A8784B /* MusicViewModel.swift in Sources */,
+				71CE10AD2B71911C00A8784B /* AlbumsView.swift in Sources */,
 				71CE10902B718F8600A8784B /* ContentView.swift in Sources */,
+				71E8D4BA2B72867D008E07F6 /* TranscribeView.swift in Sources */,
+				71CE10A22B7190F200A8784B /* SLFLog.swift in Sources */,
 				71CE108E2B718F8600A8784B /* SayItAgainApp.swift in Sources */,
+				71CE10B42B71911C00A8784B /* AlbumsFromArtistView.swift in Sources */,
+				71CE10B12B71911C00A8784B /* ArtistsView.swift in Sources */,
+				71CE10B22B71911C00A8784B /* LaunchScreenView.swift in Sources */,
+				71CE10AF2B71911C00A8784B /* NewestAlbumsView.swift in Sources */,
+				71CE10AE2B71911C00A8784B /* TracksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +355,13 @@
 				DEVELOPMENT_TEAM = SDK22Z6CLU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "This app requires Apple Music library access to display artists, albums, playlists, and to play music tracks.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,6 +369,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stewart.french.SayItAgain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -304,11 +389,13 @@
 				DEVELOPMENT_TEAM = SDK22Z6CLU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "This app requires Apple Music library access to display artists, albums, playlists, and to play music tracks.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +403,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stewart.french.SayItAgain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

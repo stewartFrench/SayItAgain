@@ -8,10 +8,20 @@
 import SwiftUI
 
 @main
-struct SayItAgainApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-}
+struct SayItAgainApp: App
+{
+
+  var musicVM : MusicViewModel = MusicViewModel()
+
+  var body: some Scene
+  {
+    WindowGroup
+    {
+      LaunchScreenView()
+        .preferredColorScheme( .dark )
+        .environmentObject(musicVM)
+
+    } // WindowGroup
+  }  // var body
+
+} // SayItAgainApp
