@@ -143,17 +143,26 @@ struct ArtistsView: View
 
       notAuthorized = !musicVM.authorizedToAccessMusic
 
-      if musicVM.selectedArtistIndex != nil
-      {
-        tSelectedArtist = musicVM.selectedArtistIndex
-      }
+      if !notAuthorized
+      { 
+        if musicVM.selectedArtistIndex != nil
+        {
+          tSelectedArtist = musicVM.selectedArtistIndex
+        }
+      } // if
     } // .onAppear
 
     .alert( isPresented: $notAuthorized )
     {
       Alert( 
-        title: Text( "Not Allowed to Access the Music Library." ),
-        message: Text( "Go to Settings > SayItAgain\nto Allow Access to Apple Music" ) )
+                title: Text( "SayItAgain needs access to the Music Library." ),
+              message: Text( "Go to Settings > SayItAgain\nto Allow Access to Apple Music" ),
+        dismissButton: 
+          Alert.Button.default( Text( "OK" ),
+            action: 
+            {
+              exit(0)
+            } ) ) // Alert
     } // .alert
 
   } // var body

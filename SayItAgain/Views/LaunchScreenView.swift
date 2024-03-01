@@ -14,6 +14,8 @@ struct LaunchScreenView: View
   
   @EnvironmentObject var musicVM : MusicViewModel
   
+  @State var notAuthorized : Bool = false
+
   var body: some View
   {
     NavigationStack
@@ -141,7 +143,27 @@ struct LaunchScreenView: View
         .navigationBarHidden(true)
       } // ZStack
     } // NavigationStack
+
+    .onAppear
+    {
+      notAuthorized = !musicVM.authorizedToAccessMusic
+    } // .onAppear
+
+    .alert( isPresented: $notAuthorized )
+    {
+      Alert( 
+                title: Text( "SayItAgain needs access to the Music Library." ),
+              message: Text( "Go to Settings > SayItAgain\nto Allow Access to Apple Music" ),
+        dismissButton: 
+          Alert.Button.default( Text( "OK" ),
+            action: 
+            {
+              exit(0)
+            } ) ) // Alert
+    } // .alert
+
   } // var body
+
 } // LaunchScreenView
 
 

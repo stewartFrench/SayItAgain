@@ -136,9 +136,9 @@ class MusicViewModel : ObservableObject
    switch status
    {
      case .authorized:
+           self.authorizedToAccessMusic = true
            DispatchQueue.main.async
            {
-             self.authorizedToAccessMusic = true
              self.readMusicLibrary()
            }
 
@@ -147,9 +147,9 @@ class MusicViewModel : ObservableObject
        { status in
          if status == .authorized
          {
+           self.authorizedToAccessMusic = true
            DispatchQueue.main.async
            {
-             self.authorizedToAccessMusic = true
              self.readMusicLibrary()
            }
          }
