@@ -37,8 +37,6 @@ struct TranscribeView: View
   @State var backupSliderValue : Float = 5.0
   @State var speedSliderValue : Float = 1.0
 
-  @State var notAuthorized : Bool = false
-
 
   //-------------------------------------------
   func stopTimer()
@@ -429,41 +427,22 @@ struct TranscribeView: View
     
     .onAppear
     {
-      notAuthorized = !musicVM.authorizedToAccessMusic
+      stopTimer()
 
-      if !notAuthorized
-      { 
-        stopTimer()
+      if savedElapsedTime != nil
+      {
+        elapsedTrackTime = Float( savedElapsedTime! )
+        musicVM.skipToTimeInTrack( pTime: savedElapsedTime! )
+      }
+      else
+      {
+        musicVM.skipToTimeInTrack( pTime: 0.0 )
+        elapsedTrackTime = 0.0
+      }
 
-        if savedElapsedTime != nil
-        {
-          elapsedTrackTime = Float( savedElapsedTime! )
-          musicVM.skipToTimeInTrack( pTime: savedElapsedTime! )
-        }
-        else
-        {
-          musicVM.skipToTimeInTrack( pTime: 0.0 )
-          elapsedTrackTime = 0.0
-        }
-
-        musicStateChanged = !musicStateChanged
-        durationOfTrack = Float( musicVM.durationOfSelectedTrack() )
-      } // if
-
+      musicStateChanged = !musicStateChanged
+      durationOfTrack = Float( musicVM.durationOfSelectedTrack() )
     } // onAppear
-
-    .alert( isPresented: $notAuthorized )
-    {
-      Alert( 
-                title: Text( "SayItAgain needs access to the Music Library." ),
-              message: Text( "Go to Settings > SayItAgain\nto Allow Access to Apple Music" ),
-        dismissButton: 
-          Alert.Button.default( Text( "OK" ),
-            action: 
-            {
-              exit(0)
-            } ) ) // Alert
-    } // .alert
 
 
     //-------------------------------------------

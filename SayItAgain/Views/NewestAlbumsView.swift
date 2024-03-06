@@ -17,8 +17,6 @@ struct NewestAlbumsView: View
 
   @State private var scrollToCurrentAlbum : Bool = false
 
-  @State var notAuthorized : Bool = false
-
 
   //-------------------
   var body: some View 
@@ -115,29 +113,11 @@ struct NewestAlbumsView: View
     
     .onAppear 
     {
-      notAuthorized = !musicVM.authorizedToAccessMusic
-
-      if !notAuthorized
-      { 
-        tSelectedAlbum = musicVM.getSelectedAlbumIndex()
+      tSelectedAlbum = musicVM.getSelectedAlbumIndex()
       
-        musicVM.retrieveNewestAlbums( 
-          artistNameIndex: nil )
-      } // if
+      musicVM.retrieveNewestAlbums( 
+        artistNameIndex: nil )
     } // .onAppear
-
-    .alert( isPresented: $notAuthorized )
-    {
-      Alert( 
-                title: Text( "SayItAgain needs access to the Music Library." ),
-              message: Text( "Go to Settings > SayItAgain\nto Allow Access to Apple Music" ),
-        dismissButton: 
-          Alert.Button.default( Text( "OK" ),
-            action: 
-            {
-              exit(0)
-            } ) ) // Alert
-    } // .alert
 
   } // var body
   

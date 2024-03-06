@@ -92,8 +92,12 @@ class MusicViewModel : ObservableObject
             // alert.  If the user authorizes the device the var
             // authorizedToAccessMusic will be set to true.  If not,
             // it will be set to false.
+            // It is possible for a caller to call the func
+            // isAuthorizedToAccessMusic() prior to the async
+            // authorization request completing.
 
   var authorizedToAccessMusic : Bool = false
+  var requestingAuthorization : Bool = true
 
 //-----------
 
@@ -136,6 +140,8 @@ class MusicViewModel : ObservableObject
    switch status
    {
      case .authorized:
+//           print( "MusicViewModel init .authorized" )
+           self.requestingAuthorization = false
            self.authorizedToAccessMusic = true
            DispatchQueue.main.async
            {
@@ -148,18 +154,50 @@ class MusicViewModel : ObservableObject
          if status == .authorized
          {
            self.authorizedToAccessMusic = true
+           self.requestingAuthorization = false
            DispatchQueue.main.async
            {
              self.readMusicLibrary()
            }
          }
+         else
+         {
+           self.requestingAuthorization = false
+         } // if
        } // closure
 
-     default: break
+     default: 
+//       print( "MusicViewModel init default" )
+       self.requestingAuthorization = false
+       break
 
    } // switch
   } // init
   
+
+  //---------------------------------------------------------
+  func isAuthorizedToAccessMusic() -> Bool
+  {
+   // If there is an asynch authorization request pending I will
+   // assume the user is authorized to access the music.
+   
+   if self.requestingAuthorization
+   {
+     return true
+   }
+   
+   self.authorizedToAccessMusic = false
+
+   let status = MPMediaLibrary.authorizationStatus()
+   switch status
+   {
+     case .authorized:
+           self.authorizedToAccessMusic = true
+     default: break
+   } // switch
+    return self.authorizedToAccessMusic
+  } // isAuthorizedToAccessMusic
+
 
 
   //---------------------------------------------------------

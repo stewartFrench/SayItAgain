@@ -13,9 +13,13 @@ struct LaunchScreenView: View
 {
   
   @EnvironmentObject var musicVM : MusicViewModel
+
+  @Environment(\.scenePhase) var scenePhase
   
   @State var notAuthorized : Bool = false
 
+
+  // ----------------------
   var body: some View
   {
     NavigationStack
@@ -137,28 +141,59 @@ struct LaunchScreenView: View
               .disabled( !musicVM.ASusable )
             .padding(.horizontal, 5)
 
-        } // VStack
         .padding(.horizontal, 5)
         .padding(.vertical, 5)
         .navigationBarHidden(true)
+
+        } // VStack
       } // ZStack
     } // NavigationStack
 
-    .onAppear
-    {
-      notAuthorized = !musicVM.authorizedToAccessMusic
-    } // .onAppear
 
+    // --------------
+    // ScenePhase indicates the operational state of the app.  I can
+    // use it to update the music library access authorization when
+    // this app is not active, i.e. when this app has pushed to the
+    // Settings app so the user can permit access to the music
+    // library, and has returned.
+    // I have left in, but commented out, the print statements.
+
+    .task( id: scenePhase )
+    { 
+      notAuthorized = !musicVM.isAuthorizedToAccessMusic()
+
+//      switch scenePhase 
+//      {
+//        case .background:
+//            print("appMoveToBackground - notAuthorized == \(notAuthorized)")
+//            break
+//        case .inactive:
+//            print("appMoveToInactive - notAuthorized == \(notAuthorized)")
+//        case .active:
+//            print("appMoveToActive - notAuthorized == \(notAuthorized)")
+//        @unknown default:
+//            print("scenePhase: @unknown default for ")
+//            break
+//        } // switch
+
+    } // .task
+
+
+
+    // --------------
     .alert( isPresented: $notAuthorized )
     {
       Alert( 
                 title: Text( "SayItAgain needs access to the Music Library." ),
               message: Text( "Go to Settings > SayItAgain\nto Allow Access to Apple Music" ),
         dismissButton: 
-          Alert.Button.default( Text( "OK" ),
+          Alert.Button.default( Text( "Settings" ),
             action: 
             {
-              exit(0)
+              UIApplication.shared.open(
+                URL( string: UIApplication.openSettingsURLString)!, 
+                            options: [:], 
+                  completionHandler: nil )
             } ) ) // Alert
     } // .alert
 

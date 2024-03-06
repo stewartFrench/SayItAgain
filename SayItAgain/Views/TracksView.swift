@@ -17,27 +17,7 @@ struct TracksView: View
 
   @State var elapsedTrackTime : Float = 0
 
-  @State var timer = Timer.publish(
-    every: 0.5,
-    on: .main,
-    in: .common ).autoconnect()
-
   @State var scrollToCurrentTrack : Bool = false
-
-  @State var notAuthorized : Bool = false
-
-
-  //---------------------------------------
-  func stopTimer() {
-    timer.upstream.connect().cancel()
-  }
-
-  func startTimer() {
-    timer = Timer.publish(
-      every: 0.5,
-      on: .main,
-      in: .common ).autoconnect()
-  }
 
 
   //---------------------------------------------
@@ -168,40 +148,12 @@ struct TracksView: View
     
     .onAppear
     {
-      notAuthorized = !musicVM.authorizedToAccessMusic
-
-      if !notAuthorized
-      { 
-        localTrackSelected = musicVM.getSelectedTrackIndex()
-        musicVM.saveTrackInfoToAppStorage()
-        elapsedTrackTime = 0
-        startTimer()
-        MusicStateChanged = !MusicStateChanged
-      } // if
-
+      localTrackSelected = musicVM.getSelectedTrackIndex()
+      musicVM.saveTrackInfoToAppStorage()
+      elapsedTrackTime = 0
+      MusicStateChanged = !MusicStateChanged
     } // onAppear
 
-    .alert( isPresented: $notAuthorized )
-    {
-      Alert( 
-                title: Text( "SayItAgain needs access to the Music Library." ),
-              message: Text( "Go to Settings > SayItAgain\nto Allow Access to Apple Music" ),
-        dismissButton: 
-          Alert.Button.default( Text( "OK" ),
-            action: 
-            {
-              exit(0)
-            } ) ) // Alert
-    } // .alert
-
-
-    //-------------------------------------------
-    // When the View disappears
-
-    .onDisappear()
-    {
-      stopTimer()
-    }
   } // var body
 
 } // TracksView

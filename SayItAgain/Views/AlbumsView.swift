@@ -19,7 +19,6 @@ struct AlbumsView: View
   
   @State private var thumbedAlbum : Int = 0
   
-  @State var notAuthorized : Bool = false
 
   
   //-------------------
@@ -146,33 +145,15 @@ struct AlbumsView: View
 
 .onAppear
     {
-      notAuthorized = !musicVM.authorizedToAccessMusic
-
-      if !notAuthorized
-      { 
-        if musicVM.selectedAlbumIndex != nil
-        {
-          tSelectedAlbum = musicVM.selectedAlbumIndex
-        }
+      if musicVM.selectedAlbumIndex != nil
+      {
+        tSelectedAlbum = musicVM.selectedAlbumIndex
+      }
       
-        musicVM.selectedArtistIndex = nil
-        musicVM.retrieveAlbums(
-          artistNameIndex: nil )
-      } // if
+      musicVM.selectedArtistIndex = nil
+      musicVM.retrieveAlbums(
+        artistNameIndex: nil )
     } // .onAppear
-
-    .alert( isPresented: $notAuthorized )
-    {
-      Alert( 
-                title: Text( "SayItAgain needs access to the Music Library." ),
-              message: Text( "Go to Settings > SayItAgain\nto Allow Access to Apple Music" ),
-        dismissButton: 
-          Alert.Button.default( Text( "OK" ),
-            action: 
-            {
-              exit(0)
-            } ) ) // Alert
-    } // .alert
 
   } // var body
 } // AlbumsView
