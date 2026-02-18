@@ -1168,7 +1168,7 @@ class MusicViewModel : ObservableObject
   {
     if MMSelectedTrack != nil
     {
-        MMPlayer.currentPlaybackRate =  playbackRateP
+//        MMPlayer.currentPlaybackRate =  playbackRateP
         localPlaybackRate = playbackRateP
     }
   } // setCurrentPlaybackRate
